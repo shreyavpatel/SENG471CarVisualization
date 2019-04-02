@@ -19,4 +19,6 @@ Route::get('car', 'CarController@selectCar');
 
 Route::get('car_display', 'CarController@display');
 
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
