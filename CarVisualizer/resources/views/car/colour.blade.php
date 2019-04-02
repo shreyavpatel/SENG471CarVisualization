@@ -1,40 +1,117 @@
-{!! Form::open(['url'=>'showColour']) !!}
+<head>
+
+  <title>
+    Colour Visualization
+  </title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <style>
+    .selection_form{
+      margin: 5% auto;
+      width: 50%;
+    }
+
+    .form-group{
+      margin: 20px auto;
+    }
+
+    .visualization{
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .colour_image{
+      width: 49%;
+      margin: 0 0;
+      display: inline-block;
+    }
+  </style>
+
+</head>
+
+
+
+<body>
+
+<div class="selection_form">
+
+  <h3>Please choose exterior and interior colours</h3>
+
+  <p hidden id="model">{{$model}}</p>
 
 <div class="form-group">
-  <select name="model">
-  <option value="0">--Select Model--</option>
-  <option value="1">Sedan</option>
-  <option value="2">SUV</option>
-  <option value="3">Coupe</option>
+  Exterior Colour:
+  <select name="exterior_colour" id="exterior_colour">
+    @foreach($ext_colours as $ext_colour)
+      <option value="{{$ext_colour}}">{{$ext_colour}}</option>
+
+    @endforeach
+
   </select>
 </div>
 
 <div class="form-group">
-  <select name="exterior_colour">
-  <option value="0">--Select exterior colour--</option>
-  <option value="1">Black</option>
-  <option value="2">White</option>
-  <option value="3">Red</option>
-  <option value="4">Silver</option>
-  <option value="5">Blue</option>
+  Interior Colour:
+  <select name="interior_colour" id="interior_colour">
+    @foreach($int_colours as $int_colour)
+      <option value="{{$int_colour}}">{{$int_colour}}</option>
+
+    @endforeach
   </select>
 </div>
 
 <div class="form-group">
-  <select name="interior_colour">
-  <option value="0">--Select interior colour--</option>
-  <option value="1">Black</option>
-  <option value="2">White</option>
-  <option value="3">Brown</option>
-  </select>
+
+  <button class="btn btn-primary form-control" onclick="visualize()">View Car</button>
+
 </div>
 
-<div class="form-group">
-  {!! Form::submit('View Car', ['class' => "btn btn-primary form-control"]) !!}
 </div>
-{!! Form::close() !!}
+
+<div class="visualization">
+
+  <img class="colour_image" src="" id="exterior_img">
+
+  <img class="colour_image" src="" id="interior_img">
+
+</div>
+
+<script>
+
+    visualize();
+
+  function visualize(){
+      var ext_colour = document.getElementById('exterior_colour').value;
+      var int_colour = document.getElementById('interior_colour').value;
+
+      var model = document.getElementById('model').innerText;
+
+      showExterior(ext_colour, model);
+      showInterior(int_colour, model);
+  }
+
+  function showExterior(ext_colour, model){
+
+      var img_address = "img/" + model + "_Exterior_" + ext_colour + ".png";
+
+      document.getElementById("exterior_img").src = img_address;
+
+      console.log(img_address);
+
+  }
+
+  function showInterior(int_colour, model){
+
+      var img_address = "img/" + model + "_Interior_" + int_colour + ".png";
+
+      document.getElementById("interior_img").src = img_address;
 
 
-{{--@if( $model!=0 && $exterior_colour!=0 && $interior_colour!=0)--}}
-   {{--<img src="/img/Sedan_Exterior_Silver.jpg" />--}}
-{{--@endif--}}
+      console.log(img_address);
+  }
+
+
+</script>
+
+</body>

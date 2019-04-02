@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('car', 'CarController@carColour');
+Route::get('car', 'CarController@selectCar');
+
+Route::get('car_display', 'CarController@display');
 
 Auth::routes();
