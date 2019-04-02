@@ -76,7 +76,7 @@
 @if(Auth::check())
   @if(Auth()->user()->isClient())
     <div class="button_client">
-      <a href="" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-heart"></span> </a>
+      <a href="#" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-heart"></span> </a>
     </div>
   @endif
 @endif
