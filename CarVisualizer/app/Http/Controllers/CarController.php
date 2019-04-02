@@ -15,7 +15,7 @@ class CarController extends Controller
 
     if ($model == 1){
         $ext_colours = ['Black', 'Blue', 'Red', 'White', 'Grey'];
-        $int_colours = ['Black', 'Grey', 'Beige'];
+        $int_colours = ['Black', 'Grey', 'LightGrey'];
 
         return view('car.colour')->with('ext_colours', $ext_colours)->with('int_colours', $int_colours)->with('model', 'Sedan');
     }
