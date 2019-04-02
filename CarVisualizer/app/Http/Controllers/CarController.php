@@ -10,8 +10,8 @@ class CarController extends Controller
     return view('car.colour');
   }
 
-  public function select(){
-    return view('car.colour');
-  }
+//  public function select(){
+//    return view('car.colour');
+//  }
 
 }

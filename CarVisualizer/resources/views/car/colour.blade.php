@@ -35,6 +35,6 @@
 {!! Form::close() !!}
 
 
-@if( $model!=0 && $exterior_colour!=0 && $interior_colour!=0)
-   <img src="/img/Sedan_Exterior_Silver.jpg" />
-@endif
+{{--@if( $model!=0 && $exterior_colour!=0 && $interior_colour!=0)--}}
+   {{--<img src="/img/Sedan_Exterior_Silver.jpg" />--}}
+{{--@endif--}}

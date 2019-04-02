@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('carColour', 'CarController@select');
+Route::get('carColour', 'CarController@carColour');
