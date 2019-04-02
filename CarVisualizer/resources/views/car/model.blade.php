@@ -48,4 +48,3 @@
 {{--<img src="/img/Sedan_Exterior_Silver.jpg" />--}}
 {{--@endif--}}
 </body>
-

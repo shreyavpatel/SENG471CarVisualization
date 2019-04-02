@@ -5,6 +5,7 @@
   </title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
   <style>
     .selection_form{
@@ -25,6 +26,10 @@
       width: 49%;
       margin: 0 0;
       display: inline-block;
+    }
+
+    .button_client {
+      margin-left: 80%;
     }
   </style>
 
@@ -61,11 +66,20 @@
   </select>
 </div>
 
+
 <div class="form-group">
 
   <button class="btn btn-primary form-control" onclick="visualize()">View Car</button>
 
 </div>
+
+@if(Auth::check())
+  @if(Auth()->user()->isClient())
+    <div class="button_client">
+      <a href="" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-heart"></span> </a>
+    </div>
+  @endif
+@endif
 
 </div>
 
