@@ -91,7 +91,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-            Group 11 Library
+            CADA
         </div>
 
         <div class="links">
@@ -99,9 +99,11 @@
                 <a href="/home">Create Client Record</a>
                 <a href="/home">View Client Record</a>
             @elseif(Auth()->user()->isSalesman())
-                <a href="/home">Select Designated Client</a>
+                <a href="/home">Select Client</a>
             @elseif(Auth()->user()->isClient()) 
                 <a href="/car">Car Visualizer</a>
+                <a href="/home">View Saved Color Combinations</a>
+                <a href="/home">Edit Account Information</a>
             @endif    
         </div>
     </div>

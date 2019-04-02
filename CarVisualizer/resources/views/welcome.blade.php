@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    LeftBlitz Inc.
+                    CADA
                 </div>
 
                 <div class="links">
