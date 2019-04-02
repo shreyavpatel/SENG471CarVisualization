@@ -29,10 +29,21 @@
 {!! Form::open(['method' => 'GET', 'url'=>'car_display']) !!}
 
 <div class="form-group">
+  Model:
     <select name="model" id="model">
         <option value="1">Sedan</option>
         <option value="2">SUV</option>
         <option value="3">Coupe</option>
+    </select>
+</div>
+
+<div class="form-group">
+  Year: 
+    <select name="year" id="year">
+        <option value="1">2020</option>
+        <option value="2">2019</option>
+        <option value="3">2018</option>
+        <option value="3">2017</option>
     </select>
 </div>
 
@@ -48,4 +59,3 @@
 {{--<img src="/img/Sedan_Exterior_Silver.jpg" />--}}
 {{--@endif--}}
 </body>
-
